@@ -1,0 +1,10 @@
+{
+    "kind": "image-manifest-v0",
+    "value": {
+        "bin": [
+            "/bin/pypy",
+            "/bin/pypy3",
+            "/bin/pypy3.6"
+        ]
+    }
+}
