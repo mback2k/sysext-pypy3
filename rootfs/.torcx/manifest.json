@@ -5,6 +5,9 @@
             "/bin/pypy",
             "/bin/pypy3",
             "/bin/pypy3.6"
+        ],
+        "units": [
+            "/lib/systemd/system/pypy3-ensurepip.service"
         ]
     }
 }
