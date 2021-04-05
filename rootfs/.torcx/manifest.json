@@ -7,7 +7,8 @@
             "/bin/pypy3.6"
         ],
         "units": [
-            "/lib/systemd/system/pypy3-ensurepip.service"
+            "/lib/systemd/system/pypy3-ensurepip.service",
+            "/lib/systemd/system/multi-user.target.wants/"
         ]
     }
 }
