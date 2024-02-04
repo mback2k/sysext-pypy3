@@ -1,18 +1,16 @@
-build: torcx.tgz torcx.squashfs
+build: sysext.raw
 
 
-pypy.tar.bz2:
-	wget -q https://downloads.python.org/pypy/pypy3.6-v7.3.3-linux64.tar.bz2 -O pypy.tar.bz2
+pypy3.tar.bz2:
+	wget -q https://downloads.python.org/pypy/pypy3.10-v7.3.15-linux64.tar.bz2 -O pypy3.tar.bz2
 
-pypy: pypy.tar.bz2
-	tar -xjf pypy.tar.bz2
+pypy3: pypy3.tar.bz2
+	tar -xjf pypy3.tar.bz2
 
 
-torcx: pypy
-	cp -ar pypy*/* rootfs/
+sysext: pypy3
+	mkdir -p rootfs/usr
+	cp -ar pypy3*/* rootfs/usr/
 
-torcx.tgz: torcx
-	tar -C rootfs -czf torcx.tgz .
-
-torcx.squashfs: torcx
-	mksquashfs rootfs torcx.squashfs
+sysext.raw: sysext
+	mksquashfs rootfs sysext.raw -all-root

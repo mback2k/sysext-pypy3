@@ -1,14 +1,11 @@
 [Unit]
-Requires=torcx.target
-After=torcx.target
 Description=PyPy3 ensure pip
 Requires=network-online.target
 After=network-online.target
 
 [Service]
 Type=oneshot
-EnvironmentFile=/run/metadata/torcx
-ExecStart=/usr/bin/env ${TORCX_BINDIR}/pypy3 -m ensurepip -U
+ExecStart=/usr/bin/pypy3 -m ensurepip -U
 RemainAfterExit=yes
 ProtectSystem=strict
 ProtectHostname=yes
